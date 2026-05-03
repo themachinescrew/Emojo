@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Flashcard Game</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        #flashcard {
+            background-color: white;
+            border-radius: 15px;
+            width: 320px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #emoji-display {
+            font-size: 120px;
+            margin-bottom: 20px;
+        }
+
+        #name-display {
+            font-size: 28px;
+            font-weight: bold;
+            color: #34495e;
+            min-height: 40px; /* Keeps the card height stable when text is hidden */
+            transition: opacity 0.3s ease;
+        }
+
+        /* Utility class to hide the text but keep its space */
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        #reveal-btn {
+            background-color: #3498db;
+            color: white;
+        }
+
+        #reveal-btn:hover {
+            background-color: #2980b9;
+        }
+
+        #next-btn {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        #next-btn:hover {
+            background-color: #27ae60;
+        }
+
+        #counter {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Emoji Flashcards</h1>
+
+    <div id="flashcard">
+        <div id="emoji-display">🤔</div>
+        <div id="name-display" class="hidden">Thinking Face</div>
+    </div>
+
+    <div class="controls">
+        <button id="reveal-btn">Reveal Answer</button>
+        <button id="next-btn">Next Emoji ➔</button>
+    </div>
+
+    <div id="counter">Card 1 of 10</div>
+
+    <script>
+        // Array of emoji flashcard data
+        const flashcards = [
+            { emoji: '🚀', name: 'Rocket' },
+            { emoji: '🥑', name: 'Avocado' },
+            { emoji: '🐙', name: 'Octopus' },
+            { emoji: '🎢', name: 'Roller Coaster' },
+            { emoji: '🧩', name: 'Puzzle Piece' },
+            { emoji: '🛸', name: 'Flying Saucer' },
+            { emoji: '🦥', name: 'Sloth' },
+            { emoji: '🥨', name: 'Pretzel' },
+            { emoji: '🗽', name: 'Statue of Liberty' },
+            { emoji: '🪀', name: 'Yo-Yo' }
+        ];
+
+        let currentIndex = 0;
+
+        // Grab HTML elements
+        const emojiDisplay = document.getElementById('emoji-display');
+        const nameDisplay = document.getElementById('name-display');
+        const revealBtn = document.getElementById('reveal-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const counter = document.getElementById('counter');
+
+        // Function to load the current card into the UI
+        function loadCard() {
+            const currentCard = flashcards[currentIndex];
+            emojiDisplay.textContent = currentCard.emoji;
+            nameDisplay.textContent = currentCard.name;
+            
+            // Ensure the name is hidden when a new card loads
+            nameDisplay.classList.add('hidden');
+            
+            // Update the counter text
+            counter.textContent = `Card ${currentIndex + 1} of ${flashcards.length}`;
+        }
+
+        // Event listener for the Reveal button
+        revealBtn.addEventListener('click', () => {
+            nameDisplay.classList.remove('hidden');
+        });
+
+        // Event listener for the Next button
+        nextBtn.addEventListener('click', () => {
+            // Move to the next index, loop back to 0 if at the end
+            currentIndex = (currentIndex + 1) % flashcards.length;
+            loadCard();
+        });
+
+        // Initialize the first card when the page loads
+        loadCard();
+    </script>
+
+</body>
+</html>
