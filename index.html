@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Flashcard Master</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f8f9fa;
+            color: #2d3436;
+        }
+
+        .header { text-align: center; margin-bottom: 20px; }
+        
+        select {
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid #dfe6e9;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        #flashcard {
+            background-color: white;
+            border-radius: 24px;
+            width: 350px;
+            height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        #emoji-display { font-size: 130px; margin-bottom: 15px; user-select: none; }
+
+        #name-display { font-size: 28px; font-weight: 800; color: #2ecc71; min-height: 40px; }
+        #hint-display { font-size: 16px; color: #636e72; font-style: italic; margin-top: 10px; min-height: 20px; text-align: center; }
+
+        .hidden { opacity: 0 !important; transition: none !important; }
+
+        .controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 350px; }
+        
+        button {
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            transition: all 0.1s;
+        }
+
+        button:active { transform: scale(0.98); }
+
+        #reveal-btn { background-color: #3498db; color: white; grid-column: span 2; }
+        #hint-btn { background-color: #f1c40f; color: #2d3436; }
+        #next-btn { background-color: #27ae60; color: white; }
+
+        #counter { margin-top: 20px; font-size: 14px; color: #b2bec3; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Flashcard Master</h1>
+        <select id="category-select">
+            <!-- Categories will be loaded here -->
+        </select>
+    </div>
+
+    <div id="flashcard">
+        <div id="emoji-display">⏳</div>
+        <div id="name-display" class="hidden"></div>
+        <div id="hint-display" class="hidden"></div>
+    </div>
+
+    <div class="controls">
+        <button id="reveal-btn">Reveal Answer</button>
+        <button id="hint-btn">Get Hint</button>
+        <button id="next-btn">Next ➔</button>
+    </div>
+
+    <div id="counter">Initializing...</div>
+
+    <script>
+        let allData = {};
+        let currentPool = [];
+        let currentIndex = 0;
+
+        const emojiDisplay = document.getElementById('emoji-display');
+        const nameDisplay = document.getElementById('name-display');
+        const hintDisplay = document.getElementById('hint-display');
+        const categorySelect = document.getElementById('category-select');
+        const counter = document.getElementById('counter');
+
+        // Load JSON on Startup
+        async function loadData() {
+            try {
+                const response = await fetch('emojis.json');
+                allData = await response.json();
+                
+                // Populate Dropdown
+                Object.keys(allData).forEach(cat => {
+                    const opt = document.createElement('option');
+                    opt.value = cat;
+                    opt.innerText = cat;
+                    categorySelect.appendChild(opt);
+                });
+
+                switchCategory();
+            } catch (err) {
+                counter.innerText = "Error loading emojis.json!";
+                console.error(err);
+            }
+        }
+
+        function switchCategory() {
+            const selectedCat = categorySelect.value;
+            currentPool = [...allData[selectedCat]].sort(() => Math.random() - 0.5);
+            currentIndex = 0;
+            loadCard();
+        }
+
+        function loadCard() {
+            // Instant Reset
+            nameDisplay.classList.add('hidden');
+            hintDisplay.classList.add('hidden');
+            nameDisplay.innerText = "";
+            hintDisplay.innerText = "";
+
+            setTimeout(() => {
+                const card = currentPool[currentIndex];
+                emojiDisplay.innerText = card.emoji;
+                nameDisplay.innerText = card.name;
+                hintDisplay.innerText = "Hint: " + card.hint;
+                counter.innerText = `Card ${currentIndex + 1} of ${currentPool.length}`;
+            }, 50);
+        }
+
+        // Button Listeners
+        document.getElementById('reveal-btn').addEventListener('click', () => {
+            nameDisplay.classList.remove('hidden');
+        });
+
+        document.getElementById('hint-btn').addEventListener('click', () => {
+            hintDisplay.classList.remove('hidden');
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % currentPool.length;
+            loadCard();
+        });
+
+        categorySelect.addEventListener('change', switchCategory);
+
+        // Start
+        loadData();
+    </script>
+</body>
+</html>
