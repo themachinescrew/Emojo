@@ -1,0 +1,91 @@
+{
+  "Smileys & Emotions": [
+    { "emoji": "😀", "name": "Grinning Face", "hint": "A big, simple smile." },
+    { "emoji": "😂", "name": "Laughing with Tears", "hint": "Something is so funny you're crying." },
+    { "emoji": "😎", "name": "Sunglasses", "hint": "Feeling cool or being in the sun." },
+    { "emoji": "🤔", "name": "Thinking", "hint": "When you are pondering a deep question." },
+    { "emoji": "🤯", "name": "Exploding Head", "hint": "That's mind-blowing!" },
+    { "emoji": "🥳", "name": "Partying", "hint": "Time for a celebration or a birthday." },
+    { "emoji": "😴", "name": "Sleeping", "hint": "Three 'Z's are often used for this." },
+    { "emoji": "😇", "name": "Angel", "hint": "Someone being very good or innocent." },
+    { "emoji": "🤢", "name": "Nauseated", "hint": "You might feel this way on a rocky boat." },
+    { "emoji": "🥺", "name": "Pleading", "hint": "Big 'puppy dog eyes' asking for a favor." }
+  ],
+  "Animals & Nature": [
+    { "emoji": "🦁", "name": "Lion", "hint": "The King of the Jungle with a big mane." },
+    { "emoji": "🐘", "name": "Elephant", "hint": "Large ears and a very long trunk." },
+    { "emoji": "🦒", "name": "Giraffe", "hint": "Has a very long neck to eat leaves from tall trees." },
+    { "emoji": "🦄", "name": "Unicorn", "hint": "A mythical horse with a horn on its head." },
+    { "emoji": "🐧", "name": "Penguin", "hint": "A flightless bird that lives in the cold." },
+    { "emoji": "🦖", "name": "T-Rex", "hint": "A giant dinosaur with tiny arms." },
+    { "emoji": "🐙", "name": "Octopus", "hint": "Has eight arms and lives in the ocean." },
+    { "emoji": "🦋", "name": "Butterfly", "hint": "Starts its life as a caterpillar." },
+    { "emoji": "🦈", "name": "Shark", "hint": "The most famous predator in the ocean." },
+    { "emoji": "🦥", "name": "Sloth", "hint": "The slowest animal in the world." },
+    { "emoji": "🦉", "name": "Owl", "hint": "A wise bird that stays up at night." },
+    { "emoji": "🌵", "name": "Cactus", "hint": "A prickly plant that lives in the desert." },
+    { "emoji": "🌋", "name": "Volcano", "hint": "A mountain that shoots out hot lava." },
+    { "emoji": "🌈", "name": "Rainbow", "hint": "Appears in the sky after it rains." }
+  ],
+  "Food & Drink": [
+    { "emoji": "🍕", "name": "Pizza", "hint": "An Italian favorite with dough, sauce, and cheese." },
+    { "emoji": "🍔", "name": "Burger", "hint": "Meat, cheese, and buns." },
+    { "emoji": "🌮", "name": "Taco", "hint": "A crunchy or soft shell filled with Mexican flavors." },
+    { "emoji": "🍣", "name": "Sushi", "hint": "Rice and fish, often wrapped in seaweed." },
+    { "emoji": "🍟", "name": "Fries", "hint": "Fried potato strips." },
+    { "emoji": "🥑", "name": "Avocado", "hint": "The main ingredient in guacamole." },
+    { "emoji": "🍦", "name": "Ice Cream", "hint": "A cold, sweet dessert in a cone." },
+    { "emoji": "🍩", "name": "Donut", "hint": "A sweet ring with a hole in the middle." },
+    { "emoji": "🥨", "name": "Pretzel", "hint": "Salty dough twisted into a knot." },
+    { "emoji": "🍎", "name": "Apple", "hint": "Teachers love this red fruit." },
+    { "emoji": "🍓", "name": "Strawberry", "hint": "A small red fruit with seeds on the outside." },
+    { "emoji": "🥓", "name": "Bacon", "hint": "Crispy fried pork strips." }
+  ],
+  "Activities & Sports": [
+    { "emoji": "⚽", "name": "Soccer", "hint": "The most popular sport in the world." },
+    { "emoji": "🏀", "name": "Basketball", "hint": "Try to bounce this ball into a hoop." },
+    { "emoji": "🏈", "name": "Football", "hint": "Played on a field with a brown, oval ball." },
+    { "emoji": "🎮", "name": "Video Game", "hint": "A controller used for play." },
+    { "emoji": "🎸", "name": "Guitar", "hint": "A stringed instrument used in rock music." },
+    { "emoji": "🎨", "name": "Painting", "hint": "What an artist uses to create a masterpiece." },
+    { "emoji": "🛹", "name": "Skateboard", "hint": "A board on four wheels for tricks." },
+    { "emoji": "🛶", "name": "Canoe", "hint": "A small boat you use a paddle with." },
+    { "emoji": "🧩", "name": "Puzzle", "hint": "Fitting pieces together to make a picture." },
+    { "emoji": "🎿", "name": "Skiing", "hint": "Sliding down a snowy mountain." }
+  ],
+  "Travel & Places": [
+    { "emoji": "🚀", "name": "Rocket", "hint": "Used by astronauts to go to the moon." },
+    { "emoji": "🛸", "name": "UFO", "hint": "A flying saucer from outer space." },
+    { "emoji": "🚢", "name": "Ship", "hint": "A very large boat for the ocean." },
+    { "emoji": "🏰", "name": "Castle", "hint": "Where a king or queen might live." },
+    { "emoji": "🗽", "name": "Statue of Liberty", "hint": "A famous green lady in New York." },
+    { "emoji": "🗼", "name": "Tokyo Tower", "hint": "Often mistaken for the Eiffel Tower." },
+    { "emoji": "🎡", "name": "Ferris Wheel", "hint": "A giant spinning wheel at a carnival." },
+    { "emoji": "🏎️", "name": "Race Car", "hint": "A very fast car with numbers on it." }
+  ],
+  "Objects": [
+    { "emoji": "💎", "name": "Diamond", "hint": "A very hard, shiny, expensive stone." },
+    { "emoji": "📷", "name": "Camera", "hint": "Used to take a photograph." },
+    { "emoji": "🔦", "name": "Flashlight", "hint": "Used to see in the dark." },
+    { "emoji": "🔭", "name": "Telescope", "hint": "Used to look at the stars." },
+    { "emoji": "🔑", "name": "Key", "hint": "Used to unlock a door." },
+    { "emoji": "🕰️", "name": "Clock", "hint": "Tells you what time it is." },
+    { "emoji": "🧬", "name": "DNA", "hint": "The building blocks of life." },
+    { "emoji": "🎈", "name": "Balloon", "hint": "Fill it with air or helium at a party." }
+  ],
+  "Flags": [
+    { "emoji": "🇺🇸", "name": "USA", "hint": "The Stars and Stripes." },
+    { "emoji": "🇬🇧", "name": "United Kingdom", "hint": "The Union Jack." },
+    { "emoji": "🇨🇦", "name": "Canada", "hint": "Features a red maple leaf." },
+    { "emoji": "🇲🇽", "name": "Mexico", "hint": "An eagle on a cactus in the center." },
+    { "emoji": "🇯🇵", "name": "Japan", "hint": "The Land of the Rising Sun." },
+    { "emoji": "🇫🇷", "name": "France", "hint": "Blue, white, and red vertical stripes." },
+    { "emoji": "🇩🇪", "name": "Germany", "hint": "Black, red, and gold horizontal stripes." },
+    { "emoji": "🇮🇹", "name": "Italy", "hint": "Green, white, and red vertical stripes." },
+    { "emoji": "🇧🇷", "name": "Brazil", "hint": "Green with a yellow diamond." },
+    { "emoji": "🇦🇺", "name": "Australia", "hint": "Has the Southern Cross constellation." },
+    { "emoji": "🇮🇳", "name": "India", "hint": "Saffron, white, and green with a wheel." },
+    { "emoji": "🇨🇳", "name": "China", "hint": "Red with five yellow stars." },
+    { "emoji": "🏴‍☠️", "name": "Pirate Flag", "hint": "The Jolly Roger: skull and crossbones." }
+  ]
+}
